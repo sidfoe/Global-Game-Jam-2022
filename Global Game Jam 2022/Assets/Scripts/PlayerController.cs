@@ -5,6 +5,8 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
+    [SerializeField] private GameManager m_gameManager;
+
     private int m_currentRound = 1;
 
     //Time variables
@@ -42,7 +44,8 @@ public class PlayerController : MonoBehaviour
         {
             m_startTime = true;
         }
-        else if (m_timePassed <= m_timeBetweenPress)
+
+        if (m_timePassed <= m_timeBetweenPress)
         {
             m_timePassed = 0;
 
@@ -112,6 +115,8 @@ public class PlayerController : MonoBehaviour
             m_currentScore += (m_correctNoteAmount * m_correctCount) + (m_failedNoteAmount * (m_correctCount - m_playerInput.Count));
         }
 
+        m_gameManager.UpdateScoreBar(m_currentScore);
+
         ClearPlayerInput();
     }
 
@@ -119,6 +124,8 @@ public class PlayerController : MonoBehaviour
     {
         m_playerInput.Clear();
         m_correctCount = 0;
+
+        m_currentRound++;
     }
 
     public void APress(InputAction.CallbackContext context)

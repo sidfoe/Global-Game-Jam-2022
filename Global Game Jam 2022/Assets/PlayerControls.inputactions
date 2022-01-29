@@ -65,7 +65,7 @@
                     "name": "",
                     "id": "973414c1-3310-4b22-a458-34a956158d61",
                     "path": "<Keyboard>/a",
-                    "interactions": "Tap(duration=0.1)",
+                    "interactions": "Tap",
                     "processors": "",
                     "groups": "",
                     "action": "A",

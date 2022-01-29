@@ -1,18 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private Slider m_scoreBar;
+
+    [SerializeField] private List<GameObject> m_act1Rounds = new List<GameObject>();
+    [SerializeField] private List<GameObject> m_act2Rounds = new List<GameObject>();
+    [SerializeField] private List<GameObject> m_act3Rounds = new List<GameObject>();
+
+    private float m_maxScore = 50;
+
+    public void UpdateScoreBar(float currentScore)
     {
-        
+        m_scoreBar.value = currentScore / m_maxScore;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+
 }
