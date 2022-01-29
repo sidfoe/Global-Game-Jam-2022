@@ -287,13 +287,13 @@ MonoBehaviour:
   m_ActionEvents:
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1806060384}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
+      - m_Target: {fileID: 1806060387}
+        m_TargetAssemblyTypeName: Sequence, Assembly-CSharp
+        m_MethodName: APress
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -303,13 +303,13 @@ MonoBehaviour:
     m_ActionName: Act1/A[/Keyboard/a]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1806060384}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
+      - m_Target: {fileID: 1806060387}
+        m_TargetAssemblyTypeName: Sequence, Assembly-CSharp
+        m_MethodName: BPress
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -319,13 +319,13 @@ MonoBehaviour:
     m_ActionName: Act1/B[/Keyboard/b]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1806060384}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
+      - m_Target: {fileID: 1806060387}
+        m_TargetAssemblyTypeName: Sequence, Assembly-CSharp
+        m_MethodName: CPress
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -335,13 +335,13 @@ MonoBehaviour:
     m_ActionName: Act1/C[/Keyboard/c]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1806060384}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
+      - m_Target: {fileID: 1806060387}
+        m_TargetAssemblyTypeName: Sequence, Assembly-CSharp
+        m_MethodName: DPress
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -351,13 +351,13 @@ MonoBehaviour:
     m_ActionName: Act1/D[/Keyboard/d]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1806060384}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
+      - m_Target: {fileID: 1806060387}
+        m_TargetAssemblyTypeName: Sequence, Assembly-CSharp
+        m_MethodName: EPress
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -367,13 +367,13 @@ MonoBehaviour:
     m_ActionName: Act1/E[/Keyboard/e]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1806060384}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
+      - m_Target: {fileID: 1806060387}
+        m_TargetAssemblyTypeName: Sequence, Assembly-CSharp
+        m_MethodName: FPress
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -412,3 +412,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 761e66bc97b30eb4ba597fee207c6478, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_round1:
+  - a
+  - b
+  - c
+  - d
+  - e
+  - f
