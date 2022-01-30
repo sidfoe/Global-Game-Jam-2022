@@ -8,6 +8,7 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     [SerializeField] private Transform m_canvas;
+    [SerializeField] private GameObject m_mainMenuPanel;
 
     [SerializeField] private Slider m_scoreBar;
 
@@ -27,7 +28,7 @@ public class GameManager : MonoBehaviour
     private int m_currentRound = 0;
     private int m_currentText = 0;
     private int m_currentOrderSpot = 0;
-    private bool m_canContinueText = true;
+    private bool m_canContinueText = false;
 
     public GameObject RoundObject;
 
@@ -89,7 +90,8 @@ public class GameManager : MonoBehaviour
 
     public void StartGame()
     {
-
+        m_mainMenuPanel.SetActive(false);
+        m_canContinueText = true;
     }
 
     public void QuitGame()
