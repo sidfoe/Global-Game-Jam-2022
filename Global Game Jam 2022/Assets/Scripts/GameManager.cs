@@ -38,6 +38,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Animator m_throneBackDrop;
     [SerializeField] private Animator m_curtainAnim;
     [SerializeField] private Animator m_forestAnim;
+    [SerializeField] private Animator m_kingAnim;
 
     public GameObject RoundObject;
 
@@ -178,6 +179,19 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void KingAnim(int index)
+    {
+        switch (index)
+        {
+            case 1:
+                m_kingAnim.Play("King Slide In");
+                break;
+            case 2:
+                m_kingAnim.Play("King Slide Out");
+                break;
+        }
+    }
+
     private void CheckToPlayAnim()
     {
         if (m_currentOrderSpot == 1) //play throne open
@@ -208,6 +222,16 @@ public class GameManager : MonoBehaviour
         if (m_currentOrderSpot == 1) //play forest close
         {
             ForestAnim(2);
+        }
+
+        if (m_currentOrderSpot == 1) //play king open
+        {
+            KingAnim(1);
+        }
+
+        if (m_currentOrderSpot == 1) //play king close
+        {
+            KingAnim(2);
         }
     }
 }
