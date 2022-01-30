@@ -60,7 +60,22 @@ public class GameManager : MonoBehaviour
         {
             m_currentOrderSpot++;
 
-            if(m_order[m_currentOrderSpot])
+            if(m_currentOrderSpot == 3)//play act 1 music
+            {
+                m_audioManager.PlayClip(1);
+            }
+
+            if(m_currentOrderSpot == 7) //start of act 2
+            {
+                m_currentAct++;
+            }
+
+            if (m_currentOrderSpot == 7) //start of act 3
+            {
+                m_currentAct++;
+            }
+
+            if (m_order[m_currentOrderSpot])
             {
                 m_currentText++;
                 ChangeText(m_currentText);
@@ -99,6 +114,7 @@ public class GameManager : MonoBehaviour
     {
         m_mainMenuPanel.SetActive(false);
         m_canContinueText = true;
+        m_audioManager.PlayClip(0);
     }
 
     public void QuitGame()
@@ -129,6 +145,52 @@ public class GameManager : MonoBehaviour
             case 2:
                 m_throneBackDrop.Play("Cave Pull Up");
                 break;
+        }
+    }
+
+    public void ForestAnim(int index)
+    {
+        switch (index)
+        {
+            case 1:
+                m_throneBackDrop.Play("Cave Drop Down");
+                break;
+            case 2:
+                m_throneBackDrop.Play("Cave Pull Up");
+                break;
+        }
+    }
+
+    private void CheckToPlayAnim()
+    {
+        if (m_currentOrderSpot == 1) //play throne open
+        {
+            ThroneAnim(1);
+        }
+
+        if (m_currentOrderSpot == 1) //play throne close
+        {
+            ThroneAnim(2);
+        }
+
+        if (m_currentOrderSpot == 1) //play cave open
+        {
+            CaveAnim(1);
+        }
+
+        if (m_currentOrderSpot == 1) //play cave close
+        {
+            CaveAnim(2);
+        }
+
+        if (m_currentOrderSpot == 1) //play forest open
+        {
+            ForestAnim(1);
+        }
+
+        if (m_currentOrderSpot == 1) //play forest close
+        {
+            ForestAnim(2);
         }
     }
 }
