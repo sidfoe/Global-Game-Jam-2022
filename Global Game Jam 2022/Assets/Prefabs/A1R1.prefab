@@ -50,6 +50,10 @@ MonoBehaviour:
   - {fileID: 175831441421098688}
   - {fileID: 141877813911936589}
   - {fileID: 5454463715006020312}
+  m_roundInfo:
+  - a
+  - b
+  - c
 --- !u!1001 &1724663757193948968
 PrefabInstance:
   m_ObjectHideFlags: 0
