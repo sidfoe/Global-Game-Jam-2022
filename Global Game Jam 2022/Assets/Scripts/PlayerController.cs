@@ -28,11 +28,6 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private List<string> m_round2 = new List<string>();
     [SerializeField] private List<string> m_round3 = new List<string>();
 
-    public void Start()
-    {
-        gameObject.scene.IsValid();
-    }
-
     void Update()
     {
         if(m_startTime == true)
