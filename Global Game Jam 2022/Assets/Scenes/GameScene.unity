@@ -282,7 +282,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: The Puppeteers Hands
+  m_text: The Puppeteer
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9db938903568e0947bd39f3881e58004, type: 2}
   m_sharedMaterial: {fileID: -5891864699156527729, guid: 9db938903568e0947bd39f3881e58004, type: 2}
