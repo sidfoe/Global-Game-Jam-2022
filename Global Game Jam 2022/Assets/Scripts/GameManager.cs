@@ -35,6 +35,7 @@ public class GameManager : MonoBehaviour
     [Header("Animations")]
     [SerializeField] private Animator m_caveBackDrop;
     [SerializeField] private Animator m_throneBackDrop;
+    [SerializeField] private Animator m_curtainAnim;
 
 
     public GameObject RoundObject;
@@ -68,11 +69,13 @@ public class GameManager : MonoBehaviour
             if(m_currentOrderSpot == 7) //start of act 2
             {
                 m_currentAct++;
+                m_audioManager.PlayClip(2);
             }
 
             if (m_currentOrderSpot == 7) //start of act 3
             {
                 m_currentAct++;
+                m_audioManager.PlayClip(3);
             }
 
             if (m_order[m_currentOrderSpot])
@@ -115,6 +118,7 @@ public class GameManager : MonoBehaviour
         m_mainMenuPanel.SetActive(false);
         m_canContinueText = true;
         m_audioManager.PlayClip(0);
+        m_curtainAnim.Play("Curtain Drop Down");
     }
 
     public void QuitGame()
