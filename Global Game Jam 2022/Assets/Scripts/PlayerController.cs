@@ -14,7 +14,8 @@ public class PlayerController : MonoBehaviour
 
     [Header ("Score Variables")]
     [SerializeField] private float m_currentScore;
-    [SerializeField] private float m_failedNoteAmount = .25f;
+    [SerializeField] private float m_fullFailedNoteAmount = .25f;
+    [SerializeField] private float m_failedNoteDeduction = .15f;
     [SerializeField] private float m_correctNoteAmount = 1.5f;
     [SerializeField] private float m_perfectBonus = 1.5f;
 
@@ -49,29 +50,25 @@ public class PlayerController : MonoBehaviour
             m_startTime = true;
         }
 
-        if (m_timePassed <= m_timeBetweenPress)
+        if (m_timePassed <= m_timeBetweenPress) //checks if player pressed button fast enough
         {
             m_timePassed = 0;
 
             if (m_playerInput[m_playerInput.Count - 1] == m_gameManager.RoundObject.GetComponent<RoundBehaviour>().RoundInfo[m_playerInput.Count - 1]) //player made correct button press
             {
                 m_correctCount++;
-            }
-            else //player hit wrong button
-            {
-
-            }
-
-            if (m_playerInput.Count == m_round1.Count)
-            {
-                CalculateScore();
-            }
-
-            m_gameManager.RoundObject.GetComponent<RoundBehaviour>().RemoveKey();
+            }  
         }
-        else //did not press fast enough and they failed that press
+        else //player did not press fast enough
         {
-            
+            m_timePassed = 0;
+        }
+
+        m_gameManager.RoundObject.GetComponent<RoundBehaviour>().RemoveKey();
+
+        if (m_playerInput.Count == m_round1.Count)
+        {
+            CalculateScore();
         }
     }
 
@@ -83,9 +80,13 @@ public class PlayerController : MonoBehaviour
         {
             m_currentScore += ((m_correctNoteAmount * m_playerInput.Count) * m_perfectBonus);
         }
+        else if(m_correctCount == 0)
+        {
+            m_currentScore *= m_fullFailedNoteAmount;
+        }
         else
         {
-            m_currentScore += (m_correctNoteAmount * m_correctCount) + (m_failedNoteAmount * (m_correctCount - m_playerInput.Count));
+            m_currentScore += ((m_correctNoteAmount - (m_failedNoteDeduction * (m_playerInput.Count - m_correctCount))) * m_correctCount);
         }
 
         m_gameManager.UpdateScoreBar(m_currentScore);

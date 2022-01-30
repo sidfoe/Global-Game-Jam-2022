@@ -6,6 +6,15 @@
             "id": "64117840-7610-4fab-9826-865638b3f83d",
             "actions": [
                 {
+                    "name": "ContinueText",
+                    "type": "Button",
+                    "id": "04815fa7-1e57-4880-b19a-ee06a1033f93",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
                     "name": "A",
                     "type": "Button",
                     "id": "8f0786f1-be6b-4a44-8cba-44352b2b4526",
@@ -54,15 +63,6 @@
                     "name": "F",
                     "type": "Button",
                     "id": "1ce0e6a3-01ad-4868-b3ac-c27ea5977f89",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "ContinueText",
-                    "type": "Button",
-                    "id": "04815fa7-1e57-4880-b19a-ee06a1033f93",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",

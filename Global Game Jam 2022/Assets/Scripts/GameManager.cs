@@ -22,7 +22,7 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private List<string> m_storyText = new List<string>();
 
-    private float m_maxScore = 50;
+    [SerializeField] private float m_maxScore = 50;
     private int m_currentAct = 1;
     private int m_currentRound = 0;
     private int m_currentText = 0;
@@ -48,7 +48,7 @@ public class GameManager : MonoBehaviour
 
     public void ContinueText(InputAction.CallbackContext context)
     {
-        if (context.performed && m_canContinueText == true)
+        if (context.performed && m_canContinueText == true && m_currentOrderSpot < m_order.Count - 1)
         {
             m_currentOrderSpot++;
 
@@ -85,5 +85,15 @@ public class GameManager : MonoBehaviour
                 RoundObject = Instantiate(m_act3Rounds[m_currentRound]);
                 break;
         }
+    }
+
+    public void StartGame()
+    {
+
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit();
     }
 }
