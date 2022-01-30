@@ -1116,7 +1116,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 439491961}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 8.37, y: -1.03, z: 1.4006987}
+  m_LocalPosition: {x: -8.35, y: -1.03, z: 1.4006987}
   m_LocalScale: {x: 0.7, y: 0.7, z: 1}
   m_Children: []
   m_Father: {fileID: 760937867}
@@ -1161,7 +1161,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 287baca4e3466ab4b9d62c93752c667d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -2537,6 +2537,7 @@ MonoBehaviour:
   m_throneBackDrop: {fileID: 8166520}
   m_curtainAnim: {fileID: 1096813932}
   m_forestAnim: {fileID: 20856887}
+  m_kingAnim: {fileID: 439491964}
   RoundObject: {fileID: 0}
 --- !u!4 &1150493104
 Transform:
@@ -3476,7 +3477,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1736162323
 RectTransform:
   m_ObjectHideFlags: 0

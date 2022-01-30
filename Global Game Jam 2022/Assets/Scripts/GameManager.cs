@@ -63,6 +63,8 @@ public class GameManager : MonoBehaviour
         {
             m_currentOrderSpot++;
 
+            CheckToPlayAnim();
+
             if(m_currentOrderSpot == 3)//play act 1 music
             {
                 m_audioManager.PlayClip(1);
@@ -199,7 +201,7 @@ public class GameManager : MonoBehaviour
             ThroneAnim(1);
         }
 
-        if (m_currentOrderSpot == 1) //play throne close
+        if (m_currentOrderSpot == 2) //play throne close
         {
             ThroneAnim(2);
         }
@@ -209,7 +211,7 @@ public class GameManager : MonoBehaviour
             CaveAnim(1);
         }
 
-        if (m_currentOrderSpot == 1) //play cave close
+        if (m_currentOrderSpot == 2) //play cave close
         {
             CaveAnim(2);
         }
@@ -219,7 +221,7 @@ public class GameManager : MonoBehaviour
             ForestAnim(1);
         }
 
-        if (m_currentOrderSpot == 1) //play forest close
+        if (m_currentOrderSpot == 2) //play forest close
         {
             ForestAnim(2);
         }
@@ -229,7 +231,7 @@ public class GameManager : MonoBehaviour
             KingAnim(1);
         }
 
-        if (m_currentOrderSpot == 1) //play king close
+        if (m_currentOrderSpot == 2) //play king close
         {
             KingAnim(2);
         }
