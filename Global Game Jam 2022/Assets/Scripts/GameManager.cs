@@ -9,6 +9,8 @@ public class GameManager : MonoBehaviour
 {
     [SerializeField] private Transform m_canvas;
     [SerializeField] private GameObject m_mainMenuPanel;
+    [SerializeField] private AudioManager m_audioManager;
+
 
     [SerializeField] private Slider m_scoreBar;
 
