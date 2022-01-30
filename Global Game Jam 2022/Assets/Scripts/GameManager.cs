@@ -91,6 +91,13 @@ public class GameManager : MonoBehaviour
             {
                 StartRound();
             }
+
+            if(m_currentOrderSpot == m_order.Count) //just updated to last segment in order
+            {
+                m_canContinueText = false;
+
+                //TODO add in score like the show went amazing % audience score show went ok show went terrible
+            }
         }
     }
 

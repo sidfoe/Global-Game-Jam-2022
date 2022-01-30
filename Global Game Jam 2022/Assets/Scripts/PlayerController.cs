@@ -148,4 +148,184 @@ public class PlayerController : MonoBehaviour
             CheckPress();
         }
     }
+
+    public void GPress(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            m_playerInput.Add("g");
+            CheckPress();
+        }
+    }
+
+    public void HPress(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            m_playerInput.Add("h");
+            CheckPress();
+        }
+    }
+
+    public void IPress(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            m_playerInput.Add("i");
+            CheckPress();
+        }
+    }
+
+    public void JPress(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            m_playerInput.Add("j");
+            CheckPress();
+        }
+    }
+
+    public void KPress(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            m_playerInput.Add("k");
+            CheckPress();
+        }
+    }
+
+    public void LPress(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            m_playerInput.Add("l");
+            CheckPress();
+        }
+    }
+
+    public void MPress(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            m_playerInput.Add("m");
+            CheckPress();
+        }
+    }
+
+    public void NPress(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            m_playerInput.Add("n");
+            CheckPress();
+        }
+    }
+
+    public void OPress(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            m_playerInput.Add("o");
+            CheckPress();
+        }
+    }
+
+    public void PPress(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            m_playerInput.Add("p");
+            CheckPress();
+        }
+    }
+
+    public void QPress(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            m_playerInput.Add("q");
+            CheckPress();
+        }
+    }
+
+    public void RPress(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            m_playerInput.Add("r");
+            CheckPress();
+        }
+    }
+
+    public void SPress(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            m_playerInput.Add("s");
+            CheckPress();
+        }
+    }
+
+    public void TPress(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            m_playerInput.Add("t");
+            CheckPress();
+        }
+    }
+
+    public void UPress(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            m_playerInput.Add("u");
+            CheckPress();
+        }
+    }
+
+    public void VPress(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            m_playerInput.Add("v");
+            CheckPress();
+        }
+    }
+
+    public void WPress(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            m_playerInput.Add("w");
+            CheckPress();
+        }
+    }
+
+    public void XPress(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            m_playerInput.Add("x");
+            CheckPress();
+        }
+    }
+
+    public void YPress(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            m_playerInput.Add("y");
+            CheckPress();
+        }
+    }
+
+    public void ZPress(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            m_playerInput.Add("z");
+            CheckPress();
+        }
+    }
 }
