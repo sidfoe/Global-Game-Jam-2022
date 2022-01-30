@@ -29,6 +29,11 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private List<string> m_round2 = new List<string>();
     [SerializeField] private List<string> m_round3 = new List<string>();
 
+    public void Start()
+    {
+        gameObject.scene.IsValid();
+    }
+
     void Update()
     {
         if(m_startTime == true)
@@ -42,11 +47,13 @@ public class PlayerController : MonoBehaviour
     {
         if (m_playerInput.Count == 1)
         {
+            m_timePassed = 0;
             m_startTime = true;
         }
 
         if (m_timePassed <= m_timeBetweenPress)
         {
+            Debug.Log("checking button");
             m_timePassed = 0;
 
             switch (m_currentRound)
@@ -60,6 +67,8 @@ public class PlayerController : MonoBehaviour
                     {
                         
                     }
+
+                    m_gameManager.RoundObject.GetComponent<RoundBehaviour>().RemoveKey();
 
                     if(m_playerInput.Count == m_round1.Count)
                     {
@@ -76,6 +85,8 @@ public class PlayerController : MonoBehaviour
                         
                     }
 
+                    m_gameManager.RoundObject.GetComponent<RoundBehaviour>().RemoveKey();
+
                     if (m_playerInput.Count == m_round2.Count)
                     {
                         CalculateScore();
@@ -90,6 +101,8 @@ public class PlayerController : MonoBehaviour
                     {
                         
                     }
+
+                    m_gameManager.RoundObject.GetComponent<RoundBehaviour>().RemoveKey();
 
                     if (m_playerInput.Count == m_round3.Count)
                     {
@@ -106,6 +119,8 @@ public class PlayerController : MonoBehaviour
 
     private void CalculateScore()
     {
+        m_startTime = false;
+
         if (m_correctCount == m_playerInput.Count)
         {
             m_currentScore += ((m_correctNoteAmount * m_playerInput.Count) * m_perfectBonus);
