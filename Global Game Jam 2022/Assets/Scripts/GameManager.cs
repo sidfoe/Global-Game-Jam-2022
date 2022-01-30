@@ -37,7 +37,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Animator m_caveBackDrop;
     [SerializeField] private Animator m_throneBackDrop;
     [SerializeField] private Animator m_curtainAnim;
-
+    [SerializeField] private Animator m_forestAnim;
 
     public GameObject RoundObject;
 
@@ -170,10 +170,10 @@ public class GameManager : MonoBehaviour
         switch (index)
         {
             case 1:
-                m_throneBackDrop.Play("Cave Drop Down");
+                m_forestAnim.Play("Forest Slide In");
                 break;
             case 2:
-                m_throneBackDrop.Play("Cave Pull Up");
+                m_forestAnim.Play("Forest Slide Out");
                 break;
         }
     }
