@@ -7,8 +7,6 @@ public class PlayerController : MonoBehaviour
 {
     [SerializeField] private GameManager m_gameManager;
 
-    private int m_currentRound = 1;
-
     //Time variables
     public float m_timeBetweenPress = .5f;
     [SerializeField] private float m_timePassed;
@@ -53,63 +51,165 @@ public class PlayerController : MonoBehaviour
 
         if (m_timePassed <= m_timeBetweenPress)
         {
-            Debug.Log("checking button");
             m_timePassed = 0;
 
-            switch (m_currentRound)
+            switch (m_gameManager.CurrentAct)
             {
+                case 0:
+                    switch (m_gameManager.CurrentRound)
+                    {
+                        case 0:
+                            if (m_playerInput[m_playerInput.Count - 1] == m_round1[m_playerInput.Count - 1]) //player made correct button press
+                            {
+                                m_correctCount++;
+                            }
+                            else //player hit wrong button
+                            {
+
+                            }
+
+                            if (m_playerInput.Count == m_round1.Count)
+                            {
+                                CalculateScore();
+                            }
+                            break;
+                        case 1:
+                            if (m_playerInput[m_playerInput.Count - 1] == m_round2[m_playerInput.Count - 1]) //player made correct button press
+                            {
+                                m_correctCount++;
+                            }
+                            else //player hit wrong button
+                            {
+
+                            }
+
+                            if (m_playerInput.Count == m_round2.Count)
+                            {
+                                CalculateScore();
+                            }
+                            break;
+                        case 2:
+                            if (m_playerInput[m_playerInput.Count - 1] == m_round3[m_playerInput.Count - 1]) //player made correct button press
+                            {
+                                m_correctCount++;
+                            }
+                            else //player hit wrong button
+                            {
+
+                            }
+
+                            if (m_playerInput.Count == m_round3.Count)
+                            {
+                                CalculateScore();
+                            }
+                            break;
+                    }
+                    break;
+
                 case 1:
-                    if (m_playerInput[m_playerInput.Count - 1] == m_round1[m_playerInput.Count - 1]) //player made correct button press
+                    switch (m_gameManager.CurrentRound)
                     {
-                        m_correctCount++;
-                    }
-                    else //player hit wrong button
-                    {
-                        
-                    }
+                        case 0:
+                            if (m_playerInput[m_playerInput.Count - 1] == m_round1[m_playerInput.Count - 1]) //player made correct button press
+                            {
+                                m_correctCount++;
+                            }
+                            else //player hit wrong button
+                            {
 
-                    m_gameManager.RoundObject.GetComponent<RoundBehaviour>().RemoveKey();
+                            }
 
-                    if(m_playerInput.Count == m_round1.Count)
-                    {
-                        CalculateScore();
+                            if (m_playerInput.Count == m_round1.Count)
+                            {
+                                CalculateScore();
+                            }
+                            break;
+                        case 1:
+                            if (m_playerInput[m_playerInput.Count - 1] == m_round2[m_playerInput.Count - 1]) //player made correct button press
+                            {
+                                m_correctCount++;
+                            }
+                            else //player hit wrong button
+                            {
+
+                            }
+
+                            if (m_playerInput.Count == m_round2.Count)
+                            {
+                                CalculateScore();
+                            }
+                            break;
+                        case 2:
+                            if (m_playerInput[m_playerInput.Count - 1] == m_round3[m_playerInput.Count - 1]) //player made correct button press
+                            {
+                                m_correctCount++;
+                            }
+                            else //player hit wrong button
+                            {
+
+                            }
+
+                            if (m_playerInput.Count == m_round3.Count)
+                            {
+                                CalculateScore();
+                            }
+                            break;
                     }
                     break;
+
                 case 2:
-                    if (m_playerInput[m_playerInput.Count - 1] == m_round2[m_playerInput.Count - 1]) //player made correct button press
+                    switch (m_gameManager.CurrentRound)
                     {
-                        m_correctCount++;
-                    }
-                    else //player hit wrong button
-                    {
-                        
-                    }
+                        case 0:
+                            if (m_playerInput[m_playerInput.Count - 1] == m_round1[m_playerInput.Count - 1]) //player made correct button press
+                            {
+                                m_correctCount++;
+                            }
+                            else //player hit wrong button
+                            {
 
-                    m_gameManager.RoundObject.GetComponent<RoundBehaviour>().RemoveKey();
+                            }
 
-                    if (m_playerInput.Count == m_round2.Count)
-                    {
-                        CalculateScore();
-                    }
-                    break;
-                case 3:
-                    if (m_playerInput[m_playerInput.Count - 1] == m_round3[m_playerInput.Count - 1]) //player made correct button press
-                    {
-                        m_correctCount++;
-                    }
-                    else //player hit wrong button
-                    {
-                        
-                    }
+                            if (m_playerInput.Count == m_round1.Count)
+                            {
+                                CalculateScore();
+                            }
+                            break;
+                        case 1:
+                            if (m_playerInput[m_playerInput.Count - 1] == m_round2[m_playerInput.Count - 1]) //player made correct button press
+                            {
+                                m_correctCount++;
+                            }
+                            else //player hit wrong button
+                            {
 
-                    m_gameManager.RoundObject.GetComponent<RoundBehaviour>().RemoveKey();
+                            }
 
-                    if (m_playerInput.Count == m_round3.Count)
-                    {
-                        CalculateScore();
+                            if (m_playerInput.Count == m_round2.Count)
+                            {
+                                CalculateScore();
+                            }
+                            break;
+                        case 2:
+                            if (m_playerInput[m_playerInput.Count - 1] == m_round3[m_playerInput.Count - 1]) //player made correct button press
+                            {
+                                m_correctCount++;
+                            }
+                            else //player hit wrong button
+                            {
+
+                            }
+
+                            if (m_playerInput.Count == m_round3.Count)
+                            {
+                                CalculateScore();
+                            }
+                            break;
                     }
                     break;
             }
+
+            m_gameManager.RoundObject.GetComponent<RoundBehaviour>().RemoveKey();
         }
         else //did not press fast enough and they failed that press
         {

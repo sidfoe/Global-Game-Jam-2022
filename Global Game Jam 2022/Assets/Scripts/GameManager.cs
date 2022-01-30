@@ -31,6 +31,9 @@ public class GameManager : MonoBehaviour
 
     public GameObject RoundObject;
 
+    public int CurrentAct => m_currentAct;
+    public int CurrentRound => m_currentRound;
+
     public void Start()
     {
         m_text.text = m_storyText[0];
@@ -38,7 +41,6 @@ public class GameManager : MonoBehaviour
 
     public void UpdateScoreBar(float currentScore)
     {
-        Debug.Log("update score");
         m_scoreBar.value = currentScore / m_maxScore;
         m_currentRound++;
         m_canContinueText = true;
@@ -49,17 +51,14 @@ public class GameManager : MonoBehaviour
         if (context.performed && m_canContinueText == true)
         {
             m_currentOrderSpot++;
-            Debug.Log("orderspot: " + m_currentOrderSpot);
 
             if(m_order[m_currentOrderSpot])
             {
-                Debug.Log("text: " + m_currentText);
                 m_currentText++;
                 ChangeText(m_currentText);
             }
             else
             {
-                Debug.Log("round");
                 StartRound();
             }
         }
