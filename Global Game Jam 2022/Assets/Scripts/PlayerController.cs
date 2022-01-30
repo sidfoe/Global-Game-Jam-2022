@@ -7,8 +7,6 @@ public class PlayerController : MonoBehaviour
 {
     [SerializeField] private GameManager m_gameManager;
 
-    private int m_currentRound = 1;
-
     //Time variables
     public float m_timeBetweenPress = .5f;
     [SerializeField] private float m_timePassed;
@@ -16,7 +14,8 @@ public class PlayerController : MonoBehaviour
 
     [Header ("Score Variables")]
     [SerializeField] private float m_currentScore;
-    [SerializeField] private float m_failedNoteAmount = .25f;
+    [SerializeField] private float m_fullFailedNoteAmount = .25f;
+    [SerializeField] private float m_failedNoteDeduction = .15f;
     [SerializeField] private float m_correctNoteAmount = 1.5f;
     [SerializeField] private float m_perfectBonus = 1.5f;
 
@@ -28,6 +27,11 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private List<string> m_round1 = new List<string>();
     [SerializeField] private List<string> m_round2 = new List<string>();
     [SerializeField] private List<string> m_round3 = new List<string>();
+
+    public void Start()
+    {
+        gameObject.scene.IsValid();
+    }
 
     void Update()
     {
@@ -42,77 +46,47 @@ public class PlayerController : MonoBehaviour
     {
         if (m_playerInput.Count == 1)
         {
+            m_timePassed = 0;
             m_startTime = true;
         }
 
-        if (m_timePassed <= m_timeBetweenPress)
+        if (m_timePassed <= m_timeBetweenPress) //checks if player pressed button fast enough
         {
             m_timePassed = 0;
 
-            switch (m_currentRound)
+            if (m_playerInput[m_playerInput.Count - 1] == m_gameManager.RoundObject.GetComponent<RoundBehaviour>().RoundInfo[m_playerInput.Count - 1]) //player made correct button press
             {
-                case 1:
-                    if (m_playerInput[m_playerInput.Count - 1] == m_round1[m_playerInput.Count - 1]) //player made correct button press
-                    {
-                        m_correctCount++;
-                    }
-                    else //player hit wrong button
-                    {
-                        
-                    }
-
-                    if(m_playerInput.Count == m_round1.Count)
-                    {
-                        CalculateScore();
-                    }
-                    break;
-                case 2:
-                    if (m_playerInput[m_playerInput.Count - 1] == m_round2[m_playerInput.Count - 1]) //player made correct button press
-                    {
-                        m_correctCount++;
-                    }
-                    else //player hit wrong button
-                    {
-                        
-                    }
-
-                    if (m_playerInput.Count == m_round2.Count)
-                    {
-                        CalculateScore();
-                    }
-                    break;
-                case 3:
-                    if (m_playerInput[m_playerInput.Count - 1] == m_round3[m_playerInput.Count - 1]) //player made correct button press
-                    {
-                        m_correctCount++;
-                    }
-                    else //player hit wrong button
-                    {
-                        
-                    }
-
-                    if (m_playerInput.Count == m_round3.Count)
-                    {
-                        CalculateScore();
-                    }
-                    break;
-            }
+                m_correctCount++;
+            }  
         }
-        else //did not press fast enough and they failed that press
+        else //player did not press fast enough
         {
-            
+            m_timePassed = 0;
+        }
+
+        m_gameManager.RoundObject.GetComponent<RoundBehaviour>().RemoveKey();
+
+        if (m_playerInput.Count == m_round1.Count)
+        {
+            CalculateScore();
         }
     }
 
     private void CalculateScore()
     {
+        m_startTime = false;
+
         if (m_correctCount == m_playerInput.Count)
         {
             m_currentScore += ((m_correctNoteAmount * m_playerInput.Count) * m_perfectBonus);
         }
+        else if(m_correctCount == 0)
+        {
+            m_currentScore *= m_fullFailedNoteAmount;
+        }
         else
         {
-            m_currentScore += (m_correctNoteAmount * m_correctCount) + (m_failedNoteAmount * (m_correctCount - m_playerInput.Count));
+            m_currentScore += ((m_correctNoteAmount - (m_failedNoteDeduction * (m_playerInput.Count - m_correctCount))) * m_correctCount);
         }
 
         m_gameManager.UpdateScoreBar(m_currentScore);
@@ -124,8 +98,6 @@ public class PlayerController : MonoBehaviour
     {
         m_playerInput.Clear();
         m_correctCount = 0;
-
-        m_currentRound++;
     }
 
     public void APress(InputAction.CallbackContext context)
