@@ -32,6 +32,11 @@ public class GameManager : MonoBehaviour
     private int m_currentOrderSpot = 0;
     private bool m_canContinueText = false;
 
+    [Header("Animations")]
+    [SerializeField] private Animator m_caveBackDrop;
+    [SerializeField] private Animator m_throneBackDrop;
+
+
     public GameObject RoundObject;
 
     public int CurrentAct => m_currentAct;
@@ -82,10 +87,10 @@ public class GameManager : MonoBehaviour
                 RoundObject = Instantiate(m_act1Rounds[m_currentRound], m_canvas);
                 break;
             case 2:
-                RoundObject = Instantiate(m_act2Rounds[m_currentRound]);
+                RoundObject = Instantiate(m_act2Rounds[m_currentRound], m_canvas);
                 break;
             case 3:
-                RoundObject = Instantiate(m_act3Rounds[m_currentRound]);
+                RoundObject = Instantiate(m_act3Rounds[m_currentRound], m_canvas);
                 break;
         }
     }
@@ -99,5 +104,31 @@ public class GameManager : MonoBehaviour
     public void QuitGame()
     {
         Application.Quit();
+    }
+
+    public void CaveAnim(int index)
+    {
+        switch(index)
+        {
+            case 1:
+                m_caveBackDrop.Play("Cave Drop Down");
+                break;
+            case 2:
+                m_caveBackDrop.Play("Cave Pull Up");
+                break;
+        }
+    }
+
+    public void ThroneAnim(int index)
+    {
+        switch (index)
+        {
+            case 1:
+                m_throneBackDrop.Play("Cave Drop Down");
+                break;
+            case 2:
+                m_throneBackDrop.Play("Cave Pull Up");
+                break;
+        }
     }
 }
