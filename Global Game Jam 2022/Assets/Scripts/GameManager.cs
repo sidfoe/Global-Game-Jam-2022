@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
 {
     [SerializeField] private Transform m_canvas;
     [SerializeField] private GameObject m_mainMenuPanel;
+    [SerializeField] private GameObject m_creditsPanel;
     [SerializeField] private AudioManager m_audioManager;
 
 
@@ -119,6 +120,18 @@ public class GameManager : MonoBehaviour
         m_canContinueText = true;
         m_audioManager.PlayClip(0);
         m_curtainAnim.Play("Curtain Drop Down");
+    }
+
+    public void CreditsMenu()
+    {
+        if(m_creditsPanel.activeSelf)
+        {
+            m_creditsPanel.SetActive(false);
+        }
+        else
+        {
+            m_creditsPanel.SetActive(true);
+        }
     }
 
     public void QuitGame()
