@@ -65,18 +65,18 @@ public class GameManager : MonoBehaviour
 
             CheckToPlayAnim();
 
-            if(m_currentOrderSpot == 3)//play act 1 music
+            if(m_currentOrderSpot == 6)//play act 1 music
             {
                 m_audioManager.PlayClip(1);
             }
 
-            if(m_currentOrderSpot == 7) //start of act 2
+            if(m_currentOrderSpot == 14) //start of act 2
             {
                 m_currentAct++;
                 m_audioManager.PlayClip(2);
             }
 
-            if (m_currentOrderSpot == 7) //start of act 3
+            if (m_currentOrderSpot == 26) //start of act 3
             {
                 m_currentAct++;
                 m_audioManager.PlayClip(3);
@@ -203,42 +203,42 @@ public class GameManager : MonoBehaviour
 
     private void CheckToPlayAnim()
     {
-        if (m_currentOrderSpot == 1) //play throne open
+        if (m_currentOrderSpot == 5 || m_currentOrderSpot == 10 || m_currentOrderSpot == 26) //play throne open
         {
             ThroneAnim(1);
         }
 
-        if (m_currentOrderSpot == 2) //play throne close
+        if (m_currentOrderSpot == 8 || m_currentOrderSpot == 14) //play throne close
         {
             ThroneAnim(2);
         }
 
-        if (m_currentOrderSpot == 1) //play cave open
+        if (m_currentOrderSpot == 18) //play cave open
         {
             CaveAnim(1);
         }
 
-        if (m_currentOrderSpot == 2) //play cave close
+        if (m_currentOrderSpot == 26) //play cave close
         {
             CaveAnim(2);
         }
 
-        if (m_currentOrderSpot == 1) //play forest open
+        if (m_currentOrderSpot == 8 || m_currentOrderSpot == 14) //play forest open
         {
             ForestAnim(1);
         }
 
-        if (m_currentOrderSpot == 2) //play forest close
+        if (m_currentOrderSpot == 10 || m_currentOrderSpot == 26) //play forest close
         {
             ForestAnim(2);
         }
 
-        if (m_currentOrderSpot == 1) //play king open
+        if (m_currentOrderSpot == 6 || m_currentOrderSpot == 10 || m_currentOrderSpot == 27) //play king open
         {
             KingAnim(1);
         }
 
-        if (m_currentOrderSpot == 2) //play king close
+        if (m_currentOrderSpot == 7 || m_currentOrderSpot == 14) //play king close
         {
             KingAnim(2);
         }

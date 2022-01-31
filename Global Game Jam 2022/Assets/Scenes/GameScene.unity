@@ -1610,7 +1610,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1758174594}
-  m_RootOrder: 4
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1842,7 +1842,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1758174594}
-  m_RootOrder: 3
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2669,7 +2669,7 @@ MonoBehaviour:
   m_scoreBar: {fileID: 392164355}
   m_textBox: {fileID: 1606414876}
   m_text: {fileID: 1456347422}
-  m_order: 0100010100010100
+  m_order: 010101000101010101000101010001010100010100000001010001010101010001
   m_act1Rounds:
   - {fileID: 6483901150917023711, guid: a274c257ee02ffe4b86d023cf8db734d, type: 3}
   - {fileID: 4498965611101951898, guid: 10c72f7028fe687498ef104253da22bf, type: 3}
@@ -2677,11 +2677,50 @@ MonoBehaviour:
   m_act2Rounds: []
   m_act3Rounds: []
   m_storyText:
-  - ttest 1
-  - resr 2
-  - test 3
-  - 'test 4 '
-  - test 5
+  - Settle down now, the puppet show will begin shortly! Press Space to continue
+    the text.
+  - 'As the master puppeteer to make a show successful you need to have skillful
+    hands. Press the buttons from left to right as fast as you can to please your
+    audience. Press the incorrect key or take too long between keys your audience
+    will grow upset. '
+  - 'Here, prep the Princess for the start of the show. '
+  - 'Time for the show to Start! '
+  - 'In a land far away there lived a Princess. This Princess was elegant and kind,
+    she was sought after by many. '
+  - 'Her father the King was waiting for the perfect Knight to entrust his daughter
+    to. But so far not a single knight was worthy. '
+  - 'Word of her elegance and beauty spread throughout the land. Soon the Shell Dweller
+    heard about the Princess and desired to have her. '
+  - 'While out on a walk the Princess the Shell Dweller saw their chance and kidnapped
+    the Princess. '
+  - 'The King was distraught that the Princess was taken, and asked his knights to
+    go save her. '
+  - 'All of the knights were too scared of the Shell Dweller to go and save the Princess.
+    They feared they would die saving her. '
+  - 'But one Knight was better than the rest and volunteered to save her. The king
+    wished them well and the Knight was off to save the Princess. '
+  - 'The Knight had a long journey in front of them, as the Shell Dwellers cave was
+    quite far from the castle. '
+  - 'The trek was long and arduous, the Knight going as fast as they could hoping
+    that the Princess would be safe. '
+  - 'There were many obstacles along the way from rugged terrain to wild boars to
+    bandits. But the Knight persevered and conquered all in their path to get to
+    the Princess. '
+  - 'Finally the knight arrived at the Shell Dwellers cave. The Shell Dweller crawled
+    out of their cave upon hearing the knight. '
+  - 'Ready for a fight, the Knight leaps into action. '
+  - 'After a great fight, the Shell Dweller Finally fell. The Knight was victorious. '
+  - 'The Princess, grateful to finally be saved, thanked the Knight. '
+  - 'Finally the Knight and the Princess arrive back at the castle. '
+  - 'The King, ecstatic that the Princess has arrived home, put on a party to celebrate
+    her return. '
+  - 'The kingdom partied through the evening. During the party the King decided that
+    this Knight is the perfect person to entrust his daughter with. '
+  - 'Stopping the party, the King tells the Knight as reward for being the only person
+    brave enough to rescue his daughter that they may marry the Princess. '
+  - 'The Knight honored accepts the Princess as their bride, removing their helmet
+    so that they may finally see each other face to face. '
+  - 'The Knight and the Princess lived happily ever after! '
   m_maxScore: 100
   m_caveBackDrop: {fileID: 781877065}
   m_throneBackDrop: {fileID: 8166520}
@@ -2978,12 +3017,12 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 18.8
+  m_fontSize: 20
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
-  m_fontSizeMin: 18
-  m_fontSizeMax: 36
+  m_fontSizeMin: 15
+  m_fontSizeMax: 20
   m_fontStyle: 0
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
@@ -3044,8 +3083,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.5029, y: 0}
-  m_SizeDelta: {x: 426.6652, y: 100}
+  m_AnchoredPosition: {x: -0.5029, y: 0.5292}
+  m_SizeDelta: {x: 500, y: 94.7083}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1535004398
 GameObject:
@@ -3298,12 +3337,12 @@ RectTransform:
   m_Children:
   - {fileID: 1456347424}
   m_Father: {fileID: 1758174594}
-  m_RootOrder: 1
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: -164}
-  m_SizeDelta: {x: 437.7477, y: 100}
+  m_SizeDelta: {x: 518, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1606414878
 MonoBehaviour:
@@ -3627,7 +3666,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1736162323
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3645,7 +3684,7 @@ RectTransform:
   - {fileID: 1214379506}
   - {fileID: 597614573}
   m_Father: {fileID: 1758174594}
-  m_RootOrder: 2
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -3782,10 +3821,10 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 392164354}
-  - {fileID: 1606414877}
-  - {fileID: 1736162323}
   - {fileID: 736962548}
   - {fileID: 683409109}
+  - {fileID: 1606414877}
+  - {fileID: 1736162323}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
