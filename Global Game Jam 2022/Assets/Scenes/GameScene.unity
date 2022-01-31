@@ -2734,7 +2734,9 @@ MonoBehaviour:
   m_forestAnim: {fileID: 20856887}
   m_kingAnim: {fileID: 439491964}
   m_knightHelmetAnim: {fileID: 0}
+  m_knightAnim: {fileID: 0}
   m_princessAnim: {fileID: 0}
+  m_turtleAnim: {fileID: 0}
   RoundObject: {fileID: 0}
 --- !u!4 &1150493104
 Transform:
