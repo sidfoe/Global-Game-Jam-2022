@@ -82,12 +82,14 @@ public class GameManager : MonoBehaviour
             if(m_currentOrderSpot == 14) //start of act 2
             {
                 m_currentAct++;
+                m_currentRound = 0;
                 m_audioManager.PlayClip(2);
             }
 
             if (m_currentOrderSpot == 26) //start of act 3
             {
                 m_currentAct++;
+                m_currentRound = 0;
                 m_audioManager.PlayClip(3);
             }
 
