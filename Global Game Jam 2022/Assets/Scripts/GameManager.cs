@@ -39,6 +39,10 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Animator m_curtainAnim;
     [SerializeField] private Animator m_forestAnim;
     [SerializeField] private Animator m_kingAnim;
+    [SerializeField] private Animator m_knightHelmetAnim;
+    [SerializeField] private Animator m_knightAnim;
+    [SerializeField] private Animator m_princessAnim;
+    [SerializeField] private Animator m_turtleAnim;
 
     public GameObject RoundObject;
 
@@ -52,6 +56,8 @@ public class GameManager : MonoBehaviour
 
     public void UpdateScoreBar(float currentScore)
     {
+        CheckPuppetAnim();
+
         m_scoreBar.value = currentScore / m_maxScore;
         m_currentRound++;
         m_canContinueText = true;
@@ -65,18 +71,18 @@ public class GameManager : MonoBehaviour
 
             CheckToPlayAnim();
 
-            if(m_currentOrderSpot == 3)//play act 1 music
+            if(m_currentOrderSpot == 6)//play act 1 music
             {
                 m_audioManager.PlayClip(1);
             }
 
-            if(m_currentOrderSpot == 7) //start of act 2
+            if(m_currentOrderSpot == 14) //start of act 2
             {
                 m_currentAct++;
                 m_audioManager.PlayClip(2);
             }
 
-            if (m_currentOrderSpot == 7) //start of act 3
+            if (m_currentOrderSpot == 26) //start of act 3
             {
                 m_currentAct++;
                 m_audioManager.PlayClip(3);
@@ -201,44 +207,189 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    private void KnightAnim(int index)
+    {
+        switch (index)
+        {
+            case 1:
+                m_knightHelmetAnim.Play("King Slide In");
+                break;
+            case 2:
+                m_knightHelmetAnim.Play("King Slide Out");
+                break;
+            case 3:
+                m_knightHelmetAnim.Play("King Slide Out");
+                break;
+            case 4:
+                m_knightHelmetAnim.Play("King Slide Out");
+                break;
+            case 5:
+                m_knightHelmetAnim.Play("King Slide Out");
+                break;
+        }
+    }
+
+    private void PrincessAnim(int index)
+    {
+        switch (index)
+        {
+            case 1:
+                m_princessAnim.Play("King Slide In");
+                break;
+            case 2:
+                m_princessAnim.Play("King Slide Out");
+                break;
+            case 3:
+                m_princessAnim.Play("King Slide Out");
+                break;
+            case 4:
+                m_princessAnim.Play("King Slide Out");
+                break;
+        }
+    }
+
+    private void TurtleAnim(int index)
+    {
+        switch (index)
+        {
+            case 1:
+                m_turtleAnim.Play("King Slide In");
+                break;
+            case 2:
+                m_turtleAnim.Play("King Slide Out");
+                break;
+            case 3:
+                m_turtleAnim.Play("King Slide Out");
+                break;
+            case 4:
+                m_turtleAnim.Play("King Slide Out");
+                break;
+            case 5:
+                m_turtleAnim.Play("King Slide Out");
+                break;
+        }
+    }
+
+    private void CheckPuppetAnim()
+    {
+        //HELMET KNIGHT
+        if (m_currentOrderSpot == 17 || m_currentOrderSpot == 21) //knight slash 1
+        {
+            KnightAnim(1);
+        }
+
+        if (m_currentOrderSpot == 20 || m_currentOrderSpot == 22) //knight slash 2
+        {
+            KnightAnim(2);
+        }
+
+        if (m_currentOrderSpot == 18) //knight run
+        {
+            KnightAnim(3);
+        }
+
+        if (m_currentOrderSpot == 13) //knight raise hand
+        {
+            KnightAnim(4);
+        }
+
+        if (m_currentOrderSpot == 18) //knight ragdoll
+        {
+            KnightAnim(5);
+        }
+
+        //PRINCESS
+        if (m_currentOrderSpot == 18) //princess hand hold
+        {
+            PrincessAnim(1);
+        }
+
+        if (m_currentOrderSpot == 3) //princess idle
+        {
+            PrincessAnim(2);
+        }
+
+        if (m_currentOrderSpot == 18) //princess ragdoll
+        {
+            PrincessAnim(3);
+        }
+
+        if (m_currentOrderSpot == 9) //princess kidnap swipe
+        {
+            PrincessAnim(4);
+        }
+        
+        //TURTLE
+        if (m_currentOrderSpot == 9) //kidnaop
+        {
+            TurtleAnim(1);
+        }
+
+        if (m_currentOrderSpot == 21) //swipe
+        {
+            TurtleAnim(2);
+        }
+
+        if (m_currentOrderSpot == 20) //roar
+        {
+            TurtleAnim(3);
+        }
+
+        if (m_currentOrderSpot == 18) //bite
+        {
+            TurtleAnim(4);
+        }
+
+        if (m_currentOrderSpot == 22) //slump
+        {
+            TurtleAnim(5);
+        }
+
+        //NO HELMET KNIGHT
+        if (m_currentOrderSpot == 18) //hand hold
+        {
+            m_knightAnim.Play("");
+        }
+    }
+
     private void CheckToPlayAnim()
     {
-        if (m_currentOrderSpot == 1) //play throne open
+        if (m_currentOrderSpot == 5 || m_currentOrderSpot == 10 || m_currentOrderSpot == 26) //play throne open
         {
             ThroneAnim(1);
         }
 
-        if (m_currentOrderSpot == 2) //play throne close
+        if (m_currentOrderSpot == 8 || m_currentOrderSpot == 14) //play throne close
         {
             ThroneAnim(2);
         }
 
-        if (m_currentOrderSpot == 1) //play cave open
+        if (m_currentOrderSpot == 18) //play cave open
         {
             CaveAnim(1);
         }
 
-        if (m_currentOrderSpot == 2) //play cave close
+        if (m_currentOrderSpot == 26) //play cave close
         {
             CaveAnim(2);
         }
 
-        if (m_currentOrderSpot == 1) //play forest open
+        if (m_currentOrderSpot == 8 || m_currentOrderSpot == 14) //play forest open
         {
             ForestAnim(1);
         }
 
-        if (m_currentOrderSpot == 2) //play forest close
+        if (m_currentOrderSpot == 10 || m_currentOrderSpot == 26) //play forest close
         {
             ForestAnim(2);
         }
 
-        if (m_currentOrderSpot == 1) //play king open
+        if (m_currentOrderSpot == 6 || m_currentOrderSpot == 10 || m_currentOrderSpot == 27) //play king open
         {
             KingAnim(1);
         }
 
-        if (m_currentOrderSpot == 2) //play king close
+        if (m_currentOrderSpot == 7 || m_currentOrderSpot == 14) //play king close
         {
             KingAnim(2);
         }
