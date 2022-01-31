@@ -39,6 +39,10 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Animator m_curtainAnim;
     [SerializeField] private Animator m_forestAnim;
     [SerializeField] private Animator m_kingAnim;
+    [SerializeField] private Animator m_knightHelmetAnim;
+    [SerializeField] private Animator m_knightAnim;
+    [SerializeField] private Animator m_princessAnim;
+    [SerializeField] private Animator m_turtleAnim;
 
     public GameObject RoundObject;
 
@@ -52,6 +56,8 @@ public class GameManager : MonoBehaviour
 
     public void UpdateScoreBar(float currentScore)
     {
+        CheckPuppetAnim();
+
         m_scoreBar.value = currentScore / m_maxScore;
         m_currentRound++;
         m_canContinueText = true;
@@ -198,6 +204,151 @@ public class GameManager : MonoBehaviour
             case 2:
                 m_kingAnim.Play("King Slide Out");
                 break;
+        }
+    }
+
+    private void KnightAnim(int index)
+    {
+        switch (index)
+        {
+            case 1:
+                m_knightHelmetAnim.Play("King Slide In");
+                break;
+            case 2:
+                m_knightHelmetAnim.Play("King Slide Out");
+                break;
+            case 3:
+                m_knightHelmetAnim.Play("King Slide Out");
+                break;
+            case 4:
+                m_knightHelmetAnim.Play("King Slide Out");
+                break;
+            case 5:
+                m_knightHelmetAnim.Play("King Slide Out");
+                break;
+        }
+    }
+
+    private void PrincessAnim(int index)
+    {
+        switch (index)
+        {
+            case 1:
+                m_princessAnim.Play("King Slide In");
+                break;
+            case 2:
+                m_princessAnim.Play("King Slide Out");
+                break;
+            case 3:
+                m_princessAnim.Play("King Slide Out");
+                break;
+            case 4:
+                m_princessAnim.Play("King Slide Out");
+                break;
+        }
+    }
+
+    private void TurtleAnim(int index)
+    {
+        switch (index)
+        {
+            case 1:
+                m_turtleAnim.Play("King Slide In");
+                break;
+            case 2:
+                m_turtleAnim.Play("King Slide Out");
+                break;
+            case 3:
+                m_turtleAnim.Play("King Slide Out");
+                break;
+            case 4:
+                m_turtleAnim.Play("King Slide Out");
+                break;
+            case 5:
+                m_turtleAnim.Play("King Slide Out");
+                break;
+        }
+    }
+
+    private void CheckPuppetAnim()
+    {
+        //HELMET KNIGHT
+        if (m_currentOrderSpot == 17 || m_currentOrderSpot == 21) //knight slash 1
+        {
+            KnightAnim(1);
+        }
+
+        if (m_currentOrderSpot == 20 || m_currentOrderSpot == 22) //knight slash 2
+        {
+            KnightAnim(2);
+        }
+
+        if (m_currentOrderSpot == 18) //knight run
+        {
+            KnightAnim(3);
+        }
+
+        if (m_currentOrderSpot == 13) //knight raise hand
+        {
+            KnightAnim(4);
+        }
+
+        if (m_currentOrderSpot == 18) //knight ragdoll
+        {
+            KnightAnim(5);
+        }
+
+        //PRINCESS
+        if (m_currentOrderSpot == 18) //princess hand hold
+        {
+            PrincessAnim(1);
+        }
+
+        if (m_currentOrderSpot == 3) //princess idle
+        {
+            PrincessAnim(2);
+        }
+
+        if (m_currentOrderSpot == 18) //princess ragdoll
+        {
+            PrincessAnim(3);
+        }
+
+        if (m_currentOrderSpot == 9) //princess kidnap swipe
+        {
+            PrincessAnim(4);
+        }
+        
+        //TURTLE
+        if (m_currentOrderSpot == 9) //kidnaop
+        {
+            TurtleAnim(1);
+        }
+
+        if (m_currentOrderSpot == 21) //swipe
+        {
+            TurtleAnim(2);
+        }
+
+        if (m_currentOrderSpot == 20) //roar
+        {
+            TurtleAnim(3);
+        }
+
+        if (m_currentOrderSpot == 18) //bite
+        {
+            TurtleAnim(4);
+        }
+
+        if (m_currentOrderSpot == 22) //slump
+        {
+            TurtleAnim(5);
+        }
+
+        //NO HELMET KNIGHT
+        if (m_currentOrderSpot == 18) //hand hold
+        {
+            m_knightAnim.Play("");
         }
     }
 

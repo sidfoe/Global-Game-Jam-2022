@@ -2674,8 +2674,14 @@ MonoBehaviour:
   - {fileID: 6483901150917023711, guid: a274c257ee02ffe4b86d023cf8db734d, type: 3}
   - {fileID: 4498965611101951898, guid: 10c72f7028fe687498ef104253da22bf, type: 3}
   - {fileID: 7488993245618572727, guid: 56a77d632476f7848a5ae5f430ac6693, type: 3}
-  m_act2Rounds: []
-  m_act3Rounds: []
+  m_act2Rounds:
+  - {fileID: 5757235433446602726, guid: 651a56f7805f4644cb2ca689f326de72, type: 3}
+  - {fileID: 769374980880010520, guid: 5a9c16b8769762d41bd90b980504c33c, type: 3}
+  - {fileID: 6356566099062016358, guid: 9d4aead89bed2654194e43f6c8ac73a2, type: 3}
+  - {fileID: 6878425799066897570, guid: d6c6b2e6b3f23b84d8117cec162dad2f, type: 3}
+  - {fileID: 396206633556016824, guid: bcc1551afc44f934caaa83947953c878, type: 3}
+  m_act3Rounds:
+  - {fileID: 5393470120779292925, guid: 5da7049d324dae4418e48b2fb301e234, type: 3}
   m_storyText:
   - Settle down now, the puppet show will begin shortly! Press Space to continue
     the text.
@@ -2727,6 +2733,8 @@ MonoBehaviour:
   m_curtainAnim: {fileID: 1096813932}
   m_forestAnim: {fileID: 20856887}
   m_kingAnim: {fileID: 439491964}
+  m_knightHelmetAnim: {fileID: 0}
+  m_princessAnim: {fileID: 0}
   RoundObject: {fileID: 0}
 --- !u!4 &1150493104
 Transform:
