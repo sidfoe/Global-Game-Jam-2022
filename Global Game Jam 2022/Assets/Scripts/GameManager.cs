@@ -12,6 +12,9 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject m_creditsPanel;
     [SerializeField] private AudioManager m_audioManager;
 
+    [SerializeField] private GameObject m_resultObject;
+    [SerializeField] private TextMeshProUGUI m_resultText;
+
 
     [SerializeField] private Slider m_scoreBar;
 
@@ -102,7 +105,8 @@ public class GameManager : MonoBehaviour
             {
                 m_canContinueText = false;
 
-                //TODO add in score like the show went amazing % audience score show went ok show went terrible
+                m_resultObject.SetActive(true);
+                m_resultText.text = "About " + m_scoreBar.value + " percent of the audience enjoyed the show";
             }
         }
     }
@@ -212,19 +216,19 @@ public class GameManager : MonoBehaviour
         switch (index)
         {
             case 1:
-                m_knightHelmetAnim.Play("King Slide In");
+                m_knightHelmetAnim.Play("KnightPuppet_SwordSwipe");
                 break;
             case 2:
-                m_knightHelmetAnim.Play("King Slide Out");
+                m_knightHelmetAnim.Play("KnightPuppet_DownSwipe");
                 break;
             case 3:
-                m_knightHelmetAnim.Play("King Slide Out");
+                m_knightHelmetAnim.Play("KnightPuppet_Walk");
                 break;
             case 4:
-                m_knightHelmetAnim.Play("King Slide Out");
+                m_knightHelmetAnim.Play("KnightPuppet_SwordRaise");
                 break;
             case 5:
-                m_knightHelmetAnim.Play("King Slide Out");
+                m_knightHelmetAnim.Play("MaskedknightPuppetDropdown");
                 break;
         }
     }
@@ -234,16 +238,16 @@ public class GameManager : MonoBehaviour
         switch (index)
         {
             case 1:
-                m_princessAnim.Play("King Slide In");
+                m_princessAnim.Play("PrincessPuppet_Handhold");
                 break;
             case 2:
-                m_princessAnim.Play("King Slide Out");
+                m_princessAnim.Play("PrincessPuppet_idle");
                 break;
             case 3:
-                m_princessAnim.Play("King Slide Out");
+                m_princessAnim.Play("PrincessPuppet_ragdoll");
                 break;
             case 4:
-                m_princessAnim.Play("King Slide Out");
+                m_princessAnim.Play("PrincessPuppet_walking");
                 break;
         }
     }
@@ -253,19 +257,19 @@ public class GameManager : MonoBehaviour
         switch (index)
         {
             case 1:
-                m_turtleAnim.Play("King Slide In");
+                m_turtleAnim.Play("DragonTurt_Kidnap");
                 break;
             case 2:
-                m_turtleAnim.Play("King Slide Out");
+                m_turtleAnim.Play("DragonTurt_ClawSwipe");
                 break;
             case 3:
-                m_turtleAnim.Play("King Slide Out");
+                m_turtleAnim.Play("DragonTurt_Roar");
                 break;
             case 4:
-                m_turtleAnim.Play("King Slide Out");
+                m_turtleAnim.Play("DragonTurt_Bite");
                 break;
             case 5:
-                m_turtleAnim.Play("King Slide Out");
+                m_turtleAnim.Play("DragonTurt_SLump");
                 break;
         }
     }
@@ -348,7 +352,7 @@ public class GameManager : MonoBehaviour
         //NO HELMET KNIGHT
         if (m_currentOrderSpot == 18) //hand hold
         {
-            m_knightAnim.Play("");
+            m_knightAnim.Play("KnightPuppetUnmasked_handholding");
         }
     }
 
