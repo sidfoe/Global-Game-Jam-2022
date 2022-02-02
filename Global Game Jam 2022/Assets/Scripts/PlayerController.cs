@@ -23,11 +23,6 @@ public class PlayerController : MonoBehaviour
 
     private int m_correctCount = 0;
 
-    //Round Lists
-    [SerializeField] private List<string> m_round1 = new List<string>();
-    [SerializeField] private List<string> m_round2 = new List<string>();
-    [SerializeField] private List<string> m_round3 = new List<string>();
-
     void Update()
     {
         if(m_startTime == true)
@@ -61,7 +56,7 @@ public class PlayerController : MonoBehaviour
 
         m_gameManager.RoundObject.GetComponent<RoundBehaviour>().RemoveKey();
 
-        if (m_playerInput.Count == m_round1.Count)
+        if (m_playerInput.Count == m_gameManager.RoundObject.GetComponent<RoundBehaviour>().RoundInfo.Count)
         {
             CalculateScore();
         }

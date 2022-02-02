@@ -97,6 +97,7 @@ public class GameManager : MonoBehaviour
             {
                 m_currentText++;
                 ChangeText(m_currentText);
+                CheckPuppetEntrances();
             }
             else
             {
@@ -221,16 +222,22 @@ public class GameManager : MonoBehaviour
                 m_knightHelmetAnim.Play("KnightPuppet_SwordSwipe");
                 break;
             case 2:
-                m_knightHelmetAnim.Play("KnightPuppet_DownSwipe");
+                m_knightHelmetAnim.Play("KnightPuppet_Downswipe");
                 break;
             case 3:
                 m_knightHelmetAnim.Play("KnightPuppet_Walk");
                 break;
             case 4:
-                m_knightHelmetAnim.Play("KnightPuppet_SwordRaise");
+                m_knightHelmetAnim.Play("Knightpuppet_SwordRaise");
                 break;
             case 5:
                 m_knightHelmetAnim.Play("MaskedknightPuppetDropdown");
+                break;
+            case 6:
+                m_knightHelmetAnim.Play("Knight Slide Over");
+                break;
+            case 7:
+                m_knightHelmetAnim.Play("Knight Slide Out");
                 break;
         }
     }
@@ -243,13 +250,16 @@ public class GameManager : MonoBehaviour
                 m_princessAnim.Play("PrincessPuppet_Handhold");
                 break;
             case 2:
-                m_princessAnim.Play("PrincessPuppet_idle");
+                m_princessAnim.Play("Princesspuppet_idle");
                 break;
             case 3:
                 m_princessAnim.Play("PrincessPuppet_ragdoll");
                 break;
             case 4:
                 m_princessAnim.Play("PrincessPuppet_walking");
+                break;
+            case 5:
+                m_princessAnim.Play("Princess Kidnapped");
                 break;
         }
     }
@@ -272,6 +282,12 @@ public class GameManager : MonoBehaviour
                 break;
             case 5:
                 m_turtleAnim.Play("DragonTurt_SLump");
+                break;
+            case 6:
+                m_turtleAnim.Play("Turtle Slide In");
+                break;
+            case 7:
+                m_turtleAnim.Play("Turtle Slide Out");
                 break;
         }
     }
@@ -299,32 +315,17 @@ public class GameManager : MonoBehaviour
             KnightAnim(4);
         }
 
-        if (m_currentOrderSpot == 18) //knight ragdoll
-        {
-            KnightAnim(5);
-        }
-
         //PRINCESS
-        if (m_currentOrderSpot == 18) //princess hand hold
+        if (m_currentOrderSpot == 25 || m_currentOrderSpot == 31) //princess hand hold
         {
             PrincessAnim(1);
         }
 
-        if (m_currentOrderSpot == 3) //princess idle
+        if (m_currentOrderSpot == 9) //princess kidnapped
         {
-            PrincessAnim(2);
+            PrincessAnim(5);
         }
 
-        if (m_currentOrderSpot == 18) //princess ragdoll
-        {
-            PrincessAnim(3);
-        }
-
-        if (m_currentOrderSpot == 9) //princess kidnap swipe
-        {
-            PrincessAnim(4);
-        }
-        
         //TURTLE
         if (m_currentOrderSpot == 9) //kidnaop
         {
@@ -352,9 +353,67 @@ public class GameManager : MonoBehaviour
         }
 
         //NO HELMET KNIGHT
-        if (m_currentOrderSpot == 18) //hand hold
+        if (m_currentOrderSpot == 31) //hand hold
         {
             m_knightAnim.Play("KnightPuppetUnmasked_handholding");
+        }
+    }
+
+    private void CheckPuppetEntrances()
+    {
+        if (m_currentOrderSpot == 2 || m_currentOrderSpot == 24) //princess ragdoll
+        {
+            PrincessAnim(3);
+        }
+
+        if (m_currentOrderSpot == 3 || m_currentOrderSpot == 26) //princess idle
+        {
+            PrincessAnim(2);
+        }
+
+        if (m_currentOrderSpot == 8) //princess walking
+        {
+            PrincessAnim(4);
+        }
+
+        if (m_currentOrderSpot == 12) //knight ragdoll
+        {
+            KnightAnim(5);
+        }
+
+        if (m_currentOrderSpot == 14) //knight run
+        {
+            KnightAnim(3);
+        }
+
+        if (m_currentOrderSpot == 19) //knight raise hand
+        {
+            KnightAnim(4);
+        }
+
+        if (m_currentOrderSpot == 24) //knight slide over
+        {
+            KnightAnim(6);
+        }
+
+        if (m_currentOrderSpot == 30) //knight slide out
+        {
+            KnightAnim(7);
+        }
+
+        if (m_currentOrderSpot == 8 || m_currentOrderSpot == 18) //turtle enter
+        {
+            TurtleAnim(6);
+        }
+
+        if (m_currentOrderSpot == 24) //turtle exit
+        {
+            TurtleAnim(7);
+        }
+
+        if (m_currentOrderSpot == 30) //knight no helmet slide in
+        {
+            m_knightAnim.Play("Knight No Helmet Slide In");
         }
     }
 
